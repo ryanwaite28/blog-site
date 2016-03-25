@@ -1,7 +1,63 @@
 /* New Mobile Style */
 
 @media only screen and (max-width: 785px) {
-	
-	
-	
+
+	.top-text {
+	  margin: 0px;
+	  width: 85px;
+	  text-align: center;
+	  line-height: 60px;
+	  float: left;
+	  vertical-align: middle;
+	  font-weight: bold;
+	  display: inline-block;
+	  font-size: 25px;
+	  text-shadow: 2px 2px 4px grey;
+	  -webkit-transition: transition 0.3s;
+	  transition: 0.3s;
+	}
+
+	.icon {
+	  display: block;
+	  float: left;
+	  height: 60px;
+	  width: 60px;
+	  padding: 10px;
+	}
+
+	.top-list {
+	  padding: 0px;
+	  margin: 0px;
+	  height: 60px;
+	  display: inline-block;
+	  width: 175px;
+	  max-width: 70%;
+	  text-align: center;
+	  -webkit-transition: transition 0.3s;
+	  transition: 0.3s;
+	  line-height: 60px;
+	  float: left;
+	  vertical-align: middle;
+	}
+
+	.top-list li {
+	  display: inline-block;
+	  padding-left: 10px;
+	  padding-right: 10px;
+	  height: 60px;
+	  -webkit-transition: transition 0.3s;
+	  transition: 0.3s;
+	}
+
+	#login-div, #signup-div {
+	  position: static;
+	  -webkit-transition: transition 0.3s;
+	  transition: 0.3s;
+	  display: inline-block;
+	}
+
+	.login-cont, .signup-cont {
+	  width: 100%;
+	}
+
 }

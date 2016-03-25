@@ -67,6 +67,9 @@ function($scope, bloggSite) {
 
 			alert('Post Shared!');
 
+			$('#newpost-name').val('');
+			$('#newpost-body').val('');
+
 			$scope.currentTopicPosts = bloggSite[index].posts;
 
 			//$scope.refreshBoard();
