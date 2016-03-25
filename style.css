@@ -1,0 +1,188 @@
+/* New Style */
+
+hr {
+  border-color: grey;
+}
+
+.top-bar {
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  background: rgba(255,255,255,.95);
+  box-shadow: 1px 2px 5px black;
+  z-index: 100
+}
+.top-div {
+  width: 785px;
+  height: 60px;
+}
+
+.icon {
+  display: block;
+  float: left;
+  height: 60px;
+  width: 60px;
+  padding: 5px;
+}
+
+.top-text {
+  margin: 0px;
+  width: 135px;
+  text-align: center;
+  line-height: 60px;
+  float: left;
+  vertical-align: middle;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 40px;
+  text-shadow: 2px 2px 4px grey;
+  -webkit-transition: transition 0.3s;
+  transition: 0.3s;
+}
+
+.top-text2 {
+  position: relative;
+  text-align: center;
+  font-size: 65px;
+  color: white;
+  text-shadow: 2px 4px 5px black;
+  line-height: 70vh;
+  vertical-align: middle;
+}
+
+.top-text:hover {
+  background-color: #d9d9d9;
+  transition: 0.3s;
+}
+
+.top-list {
+  padding: 0px;
+  margin: 0px;
+  height: 60px;
+  display: inline-block;
+  width: 250px;
+  max-width: 70%;
+  text-align: center;
+  -webkit-transition: transition 0.3s;
+  transition: 0.3s;
+  line-height: 60px;
+  float: left;
+  vertical-align: middle;
+}
+.top-list li {
+  display: inline-block;
+  padding-left: 25px;
+  padding-right: 25px;
+  height: 60px;
+  -webkit-transition: transition 0.3s;
+  transition: 0.3s;
+}
+
+.top-list li:hover {
+  background-color: #d9d9d9;
+  transition: 0.3s;
+}
+
+.middlr {
+  display: block;
+  margin: auto;
+}
+
+#grand-container {
+  padding-top: 60px;
+}
+
+.header {
+  background-image: url('http://fullhdpictures.com/wp-content/uploads/2015/10/Popular-Black-White-Wallpaper.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 80vh;
+  width: 100%;
+  margin: 0px;
+}
+
+.forms {
+  display: block;
+  margin: auto;
+  padding: 15px;
+  width: 500px;
+  max-width: 100%;
+}
+
+.bg-grey {
+  background-color: #d9d9d9;
+}
+
+.no-padd {
+  padding: 0px;
+}
+.row {
+  margin: 0px;
+  width: 100%;
+}
+
+.brd-1 {
+  border:1px solid black;
+}
+
+#newpost-body {
+  width: 75%;
+  height: 20vh;
+}
+
+.disc-list {
+  padding: 0px;
+  margin: 0px;
+}
+
+.disc-list li {
+  padding: 10px 20px 10px 20px;
+  margin-bottom: 15px;
+  display: block;
+  -webkit-transition: transition 0.3s;
+  transition: 0.3s;
+}
+.disc-list li:hover {
+  background-color: #d9d9d9;
+  transition: 0.3s;
+}
+
+.disc-list li hr {
+  border-color: #e6e6e6;
+}
+
+/* --- */
+
+#login-div, #signup-div {
+  position: relative;
+  -webkit-transition: transition 0.3s;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.login-cont, .signup-cont {
+  padding: 20px;
+  width: 285px;
+  max-height: 85vh;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 60px;
+  left: 0px;
+  background-color: white;
+  -webkit-transition: transition 0.3s;
+  transition: 0.3s;
+  border: 1px solid black;
+}
+.login-cont input, .signup-cont input {
+  line-height: 25px;
+  vertical-align: middle;
+  width: 85%;
+}
+
+#login-div:hover .login-cont, #signup-div:hover .signup-cont {
+  visibility: visible;
+  opacity: 1.0;
+  transition: 0.3s;
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<title>Oberra</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="stylesheet" type="text/css" href="http://ryanwaite28.github.io/my-cdn/css/bootstrap.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="http://ryanwaite28.github.io/my-cdn/css/emerald.css"/>-->
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link rel="stylesheet" type="text/css" media="only screen and (max-width: 785px)" href="mobile-style.css">
+		<link rel="icon" type="image/png" size="25x25" href="http://sandbox.prosemedia.com/wp-content/uploads/2013/02/Prose-Icon-(Blog).png"/>
+		<script src="http://ryanwaite28.github.io/my-cdn/js/angular.js"></script>
+		<script src="http://ryanwaite28.github.io/my-cdn/js/jquery.js"></script>
+		<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+		<script src="https://cdn.firebase.com/libs/angularfire/1.1.4/angularfire.min.js"></script>
+		<script src="http://ryanwaite28.github.io/my-cdn/js/emerald.js"></script>
+		<script src="script.js"></script>
+	</head>
+
+	<body ng-app="myApp" ng-controller="masterCtrl">
+
+		<div class="top-bar" id="top-bar">
+
+			<div class="top-div middlr">
+
+				<img class="icon" src="http://sandbox.prosemedia.com/wp-content/uploads/2013/02/Prose-Icon-(Blog).png"/>
+
+				<h1 class="top-text"><b>Oberra</b></h1>
+
+				<ul class="top-list">
+					<li id="login-div">
+						<div>
+							<a href="#">Log In</a>
+							<div class="login-cont">
+								<h3 class="">Log In</h3>
+								<hr>
+								<input type="text" id="" placeholder="Email"/>
+								<input type="password" id="" placeholder="Password"/>
+								<input type="button" id="" value="Log In"/>
+							</div>
+						</div>
+					</li>
+
+					<li id="signup-div">
+						<div>
+							<a href="#">Sign Up</a>
+							<div class="signup-cont">
+								<h3 class="">Sign Up!</h3>
+								<hr>
+								<input type="text" id="" placeholder="Enter Email"/>
+								<input type="text" id="" placeholder="Confirm Email"/>
+								<input type="password" id="" placeholder="Enter Password"/>
+								<input type="password" id="" placeholder="Confirm Password"/>
+								<input type="button" id="" value="Sign Up!"/>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="container-fluid no-padd" id="grand-container">
+
+			<header class="row header">
+				<!-- Header Row w/background Image -->
+				<h1 class="top-text2"><b><em>Share Your Thoughts!</em></b></h1>
+			</header>
+
+			<div class="row bg-grey" style="padding: 45px;">
+
+				<div class="col-md-12">
+					<h2 class="text-center"><b>Blog/Forum Site!</b></h2>
+					<br>
+					<h3 class="text-center">Select a Topic From The DropDown<br>And Add a Post To The Discussion!</h3>
+				</div>
+
+			</div>
+
+			<div class="row" style="padding: 45px;">
+
+				<div class="col-md-12">
+
+					<div class="forms">
+						<h2 class="text-center"><b>Select/Submit a Topic</b></h2>
+						<select id="topics" class="middlr">
+							<option>-Select a Topic-</option>
+							<option ng-repeat="topic in blogSite">
+								{{topic.name}}
+							</option>
+						</select><br>
+						<input type="text" class="middlr" id="new-topic" placeholder="Submit a New Topic!"/><br>
+						<button type="button" class="submit-btn middlr" ng-click="newTopic()">Submit Topic</button>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<hr>
+
+			<div class="row">
+
+				<div class="col-md-4">
+
+					<div class="addpost-form brd-1" id="addpost-form" ng-hide="hideForm">
+						<h2 class="text-center"><b>Share a Post</b></h2><hr>
+						<input class="middlr" type="text" id="newpost-name" placeholder="Your Name"/><br>
+						<!--<input class="middlr" type="text" id="newpost-body" placeholder="Your Thoughts"/><br>-->
+						<textarea class="middlr" id="newpost-body" placeholder="Your Thoughts"></textarea><br>
+						<button type="button" class="submit-btn middlr" id="post-btn" ng-click="newPost(this)">Submit Post</button>
+						<br>
+					</div>
+
+				</div>
+
+				<div class="col-md-8" id="topic-discussion">
+
+					<div class="disc-div brd-1" id="disc-div" ng-hide="hideForm">
+
+						<h2 class="text-center"><b>{{currentTopicName}}</b></h2>
+						<hr>
+						<ul class="disc-list" id="disc-list">
+							<li ng-repeat="post in currentTopicPosts">
+								<h3><b>{{post.personName}}</b></h3>
+								<p>{{post.personThoughts}}</p>
+								<hr>
+							</li>
+						</ul>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<br><br><br><br><br>
+
+		</div>
+
+	</body>
+
+</html>
