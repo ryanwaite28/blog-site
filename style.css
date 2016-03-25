@@ -46,7 +46,7 @@ hr {
   font-size: 65px;
   color: white;
   text-shadow: 2px 4px 5px black;
-  line-height: 70vh;
+  top: 35%;
   vertical-align: middle;
 }
 
@@ -185,4 +185,13 @@ hr {
   visibility: visible;
   opacity: 1.0;
   transition: 0.3s;
+}
+
+#topics {
+  max-height: 50vh;
+  overflow-y: scroll;
+}
+
+#addpost-form {
+  margin-bottom: 20px;
 }
