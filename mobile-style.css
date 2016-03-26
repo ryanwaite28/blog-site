@@ -30,7 +30,7 @@
 	  margin: 0px;
 	  height: 60px;
 	  display: inline-block;
-	  width: 175px;
+	  width: 155px;
 	  max-width: 70%;
 	  text-align: center;
 	  -webkit-transition: transition 0.3s;
@@ -59,5 +59,18 @@
 	.login-cont, .signup-cont {
 	  width: 100%;
 	}
+
+}
+
+/* New Mobile Style */
+
+@media only screen and (max-width: 785px) {
+
+	.top-text {
+	  font-size: 20px;
+	  width: 60px;
+	}
+
+
 
 }

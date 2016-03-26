@@ -40,6 +40,8 @@
 								<input type="text" id="" placeholder="Email"/>
 								<input type="password" id="" placeholder="Password"/>
 								<input type="button" id="" value="Log In"/>
+								<p>Or Log In With facebook!</p>
+								<a href="#" title="Facebook Log On"><img class="ico" ng-click="fbLogin()" src="https://static.xx.fbcdn.net/rsrc.php/yl/r/H3nktOa7ZMg.ico"/></a>
 							</div>
 						</div>
 					</li>
@@ -61,6 +63,18 @@
 				</ul>
 			</div>
 
+			<div id="m-div">
+			<a href="#" title="Menu DropDown"><img id="m-icon" src="http://i.imgur.com/huBw3xR.png"/></a>
+			<div id="m-cont">
+			<h3 class="text-center">Facebook Account</h3>
+			<p class="text-center">If you logged in with facebook, your info will appear below</p>
+			<hr>
+			<img width=50% class="fb-photo middlr" src="{{fbPhoto}}"/>
+			<h4 class="text-center">{{fbName}}</h4>
+			<p class="text-center"><a href="{{fbLink}}">Click To See Profile</a></p>
+			</div>
+		</div>
+
 		</div>
 
 		<div class="container-fluid no-padd" id="grand-container">
@@ -78,6 +92,8 @@
 					<h2 class="text-center"><b>Blog/Forum Site!</b></h2>
 					<br>
 					<h3 class="text-center">Select a Topic From The DropDown<br>And Add a Post To The Discussion!</h3>
+					<br>
+					<p class="text-center">Please be appropiate and refrain from using fowl language.</p>
 				</div>
 
 			</div>
@@ -124,13 +140,15 @@
 
 					<div class="disc-div brd-1" id="disc-div" ng-hide="hideForm">
 
-						<h2 class="text-center"><b>{{currentTopicName}}</b></h2>
+						<h2 class="text-center"><b>{{currentTopicName | uppercase}}</b></h2>
 						<hr>
 						<ul class="disc-list" id="disc-list">
-							<li ng-repeat="post in currentTopicPosts">
+							<li ng-repeat="post in currentTopicPosts | orderBy: 'postDate[reverse]'">
+								<img class="pfb-img" src="{{post.postImg}}"/>
 								<h3><b>{{post.personName}}</b></h3>
 								<p>{{post.personThoughts}}</p>
-								<hr>
+								<br>
+								<p>{{post.postDate}}</p>
 							</li>
 						</ul>
 
