@@ -170,7 +170,7 @@ function($scope, bloggSite) {
   			} 
   			else {
     			console.log("Authenticated successfully with payload:", authData);
-  				alert('User Login Successful!');
+  				alert('User Login Successful! Hover Over The Menu Icon At The Top Right Corner To See Your Info!');
 
     			$scope.userName = authData.password.email;
     			$scope.userPhoto = authData.password.profileImageURL;
@@ -195,6 +195,7 @@ function($scope, bloggSite) {
   			} 
   			else {
     			console.log("Authenticated successfully with payload:", authData);
+    			alert('User Login Successful! Hover Over The Menu Icon At The Top Right Corner To See Your Info!');
 
     			$scope.userName = authData.facebook.displayName;
     			$scope.userPhoto = authData.facebook.profileImageURL;
