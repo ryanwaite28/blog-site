@@ -37,9 +37,9 @@
 							<div class="login-cont">
 								<h3 class="">Log In</h3>
 								<hr>
-								<input type="text" id="" placeholder="Email"/>
-								<input type="password" id="" placeholder="Password"/>
-								<input type="button" id="" value="Log In"/>
+								<input type="text" id="email" placeholder="Email"/>
+								<input type="password" id="password" placeholder="Password"/>
+								<input type="button" ng-click="logIn()" id="" value="Log In"/>
 								<p>Or Log In With facebook!</p>
 								<a href="#" title="Facebook Log On"><img class="ico" ng-click="fbLogin()" src="https://static.xx.fbcdn.net/rsrc.php/yl/r/H3nktOa7ZMg.ico"/></a>
 							</div>
@@ -52,11 +52,12 @@
 							<div class="signup-cont">
 								<h3 class="">Sign Up!</h3>
 								<hr>
-								<input type="text" id="" placeholder="Enter Email"/>
-								<input type="text" id="" placeholder="Confirm Email"/>
-								<input type="password" id="" placeholder="Enter Password"/>
-								<input type="password" id="" placeholder="Confirm Password"/>
-								<input type="button" id="" value="Sign Up!"/>
+								<!--<input type="text" id="name" placeholder="Enter Name"/>-->
+								<input type="text" id="em-1" placeholder="Enter Email"/>
+								<input type="text" id="em-2" placeholder="Confirm Email"/>
+								<input type="password" id="pwrd-1" placeholder="Enter Password"/>
+								<input type="password" id="pwrd-2" placeholder="Confirm Password"/>
+								<input type="button" ng-click="signUp()" id="" value="Sign Up!"/>
 							</div>
 						</div>
 					</li>
@@ -66,12 +67,11 @@
 			<div id="m-div">
 			<a href="#" title="Menu DropDown"><img id="m-icon" src="http://i.imgur.com/huBw3xR.png"/></a>
 			<div id="m-cont">
-			<h3 class="text-center">Facebook Account</h3>
-			<p class="text-center">If you logged in with facebook, your info will appear below</p>
+			<h3 class="text-center">User Account</h3>
+			<p style="padding: 5px;" class="text-center">If you logged in with facebook or your own Oberra account, your info will appear below</p>
 			<hr>
-			<img width=50% class="fb-photo middlr" src="{{fbPhoto}}"/>
-			<h4 class="text-center">{{fbName}}</h4>
-			<p class="text-center"><a href="{{fbLink}}">Click To See Profile</a></p>
+			<img width=50% class="fb-photo middlr" src="{{userPhoto}}"/>
+			<a href="{{userLink}}"><h4 class="text-center">{{userName}}</h4></a>
 			</div>
 		</div>
 
