@@ -17,6 +17,42 @@ hr {
   height: 60px;
 }
 
+#m-div {
+	position: relative;
+	float: right;
+	-webkit-transition: transition 0.3s;
+  transition: 0.3s;
+  z-index: 1000;
+}
+#m-cont {
+	position: absolute;
+	-webkit-transition: transition 0.3s;
+  transition: 0.3s;
+  visibility: hidden;
+  opacity: 0;
+  background-color: white;
+	top: 0px;
+	right: 0px;
+	width: 275px;
+	min-height: 35vh;
+	border: 1px solid black;
+	z-index: 1000;
+}
+#m-div:hover #m-cont {
+	visibility: visible;
+	opacity: 1.0;
+	transition: 0.3s;
+}
+
+#m-icon {
+	height: 60px;
+	width: 60px;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	z-index: 1000;
+}
+
 .icon {
   display: block;
   float: left;
@@ -138,7 +174,8 @@ hr {
 
 .disc-list li {
   padding: 10px 20px 10px 20px;
-  margin-bottom: 15px;
+
+  border-bottom: 1px solid black;
   display: block;
   -webkit-transition: transition 0.3s;
   transition: 0.3s;
@@ -162,7 +199,7 @@ hr {
 }
 
 .login-cont, .signup-cont {
-  padding: 20px;
+  padding: 15px;
   width: 285px;
   max-height: 85vh;
   visibility: hidden;
@@ -179,6 +216,18 @@ hr {
   line-height: 25px;
   vertical-align: middle;
   width: 85%;
+}
+
+.ico {
+  padding: 10px;
+  height: 60px;
+  width: 60px;
+  -webkit-transition: transition 0.3s;
+  transition: 0.3s;
+}
+.ico:hover {
+  background-color: #d9d9d9;
+  transition: 0.3s;
 }
 
 #login-div:hover .login-cont, #signup-div:hover .signup-cont {

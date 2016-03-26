@@ -17,8 +17,6 @@ function($scope, bloggSite) {
 
 	$scope.blogSite = bloggSite;
 
-
-
 	$scope.currentTopic = {};
 	$scope.currentTopicName = '';
 	$scope.currentTopicPosts = [];
@@ -56,18 +54,35 @@ function($scope, bloggSite) {
 
 			var postName = $('#newpost-name').val();
 			var postBody = $('#newpost-body').val();
-			console.log(postName);
+
+			var date = Date();
+
+			if(postName == '' || postBody == '') {
+				alert('Please Fill In Both Fields.');
+				return;
+			}
 
 			var path = new Firebase('https://blogg-site.firebaseio.com/'+ $scope.currentid +'/posts');
 
-			path.push({
-				'personName' : postName,
-				'personThoughts' : postBody
-			})
+			if($scope.fbLink != '' || $scope.fbLink != null) {
+				path.push({
+					'personName' : postName,
+					'personThoughts' : postBody,
+					'postDate' : date,
+					'postImg' : $scope.fbPhoto
+				})
+			}
+			else {
+				path.push({
+					'personName' : postName,
+					'personThoughts' : postBody,
+					'postDate' : date
+				})
+			}
 
 			alert('Post Shared!');
 
-			$('#newpost-name').val('');
+			$('#newpost-name').val($scope.fbName);
 			$('#newpost-body').val('');
 
 			$scope.currentTopicPosts = bloggSite[index].posts;
@@ -88,14 +103,37 @@ function($scope, bloggSite) {
 
 	})
 
-	$scope.refreshBoard = function() {
+	$scope.fbLogin = function() {
 
+		var ref = new Firebase("https://blogg-site.firebaseio.com");
+		ref.authWithOAuthPopup("facebook", function(error, authData) {
+  			if (error) {
+    			console.log("Login Failed!", error);
+  			} 
+  			else {
+    			console.log("Authenticated successfully with payload:", authData);
+
+    			$scope.fbName = authData.facebook.displayName;
+    			$scope.fbPhoto = authData.facebook.profileImageURL;
+    			$scope.fbLink = authData.facebook.cachedUserProfile.link;
+
+    			$('#newpost-name').val($scope.fbName);
+
+    			$scope.$apply(function(){})
+
+  			}
+		});
 	}
 
 	$scope.newTopic = function() {
 		console.log("New Topic.");
 
 		var newTopic = $('#new-topic').val().toLowerCase();
+
+		if(newTopic == '') {
+			alert('Please Enter a Name for a New Topic.');
+			return;
+		}
 
 		for(var key in $scope.blogSite) {
 
@@ -109,6 +147,7 @@ function($scope, bloggSite) {
 
 		$scope.blogSite.$add({
 			name : newTopic,
+			//date : Date(),
 			//posts : ['']
 		})
 		console.log('New Topic Accepted.');
