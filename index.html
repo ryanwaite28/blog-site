@@ -106,7 +106,7 @@
 						<h2 class="text-center"><b>Select/Submit a Topic</b></h2>
 						<select id="topics" class="middlr">
 							<option>-Select a Topic-</option>
-							<option ng-repeat="topic in blogSite | orderBy: 'name'">
+							<option ng-repeat="topic in blogSite">
 								{{topic.name}}
 							</option>
 						</select><br>
