@@ -11,7 +11,9 @@
 		<!--<link rel="stylesheet" type="text/css" href="http://ryanwaite28.github.io/my-cdn/css/emerald.css"/>-->
 		<link rel="stylesheet" type="text/css" href="style.css"/>
 		<link rel="stylesheet" type="text/css" media="only screen and (max-width: 785px)" href="mobile-style.css">
-		<link rel="icon" type="image/png" size="25x25" href="https://sandbox.prosemedia.com/wp-content/uploads/2013/02/Prose-Icon-(Blog).png"/>
+		<link rel="icon" type="image/png" size="25x25" href="blog-icon.png"/>
+		<link rel="stylesheet" href="bootstrap-social-gh-pages/assets/css/font-awesome.css">
+		<link rel="stylesheet" href="bootstrap-social-gh-pages/bootstrap-social.css">
 		<script src="https://ryanwaite28.github.io/my-cdn/js/angular.js"></script>
 		<script src="https://ryanwaite28.github.io/my-cdn/js/jquery.js"></script>
 		<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
@@ -26,7 +28,7 @@
 
 			<div class="top-div middlr">
 
-				<img class="icon" src="https://sandbox.prosemedia.com/wp-content/uploads/2013/02/Prose-Icon-(Blog).png"/>
+				<img class="icon" src="blog-icon.png"/>
 
 				<h1 class="top-text"><b>Oberra</b></h1>
 
@@ -37,11 +39,12 @@
 							<div class="login-cont">
 								<h3 class="">Log In</h3>
 								<hr>
-								<input type="text" id="email" placeholder="Email"/>
-								<input type="password" id="password" placeholder="Password"/>
-								<input type="button" ng-click="logIn()" id="" value="Log In"/>
-								<p>Or Log In With facebook!</p>
-								<a href="#" title="Facebook Log On"><img class="ico" ng-click="fbLogin()" src="https://static.xx.fbcdn.net/rsrc.php/yl/r/H3nktOa7ZMg.ico"/></a>
+								<!-- <a href="#" title="Facebook Log On">
+									<img class="ico" ng-click="fbLogin()" src="https://static.xx.fbcdn.net/rsrc.php/yl/r/H3nktOa7ZMg.ico"/>
+								</a> -->
+								<a ng-click="fbLogin()" class="btn btn-social-icon btn-lg btn-facebook">
+									<i class="fa fa-facebook"></i>
+								</a>
 							</div>
 						</div>
 					</li>
