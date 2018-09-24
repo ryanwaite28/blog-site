@@ -17,8 +17,10 @@
 		<script src="https://ryanwaite28.github.io/my-cdn/js/angular.js"></script>
 		<script src="https://ryanwaite28.github.io/my-cdn/js/jquery.js"></script>
 		<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+		<!-- <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script> -->
 		<script src="https://cdn.firebase.com/libs/angularfire/1.1.4/angularfire.min.js"></script>
 		<script src="https://ryanwaite28.github.io/my-cdn/js/emerald.js"></script>
+		<script src="array-sortby.js"></script>
 		<script src="script.js"></script>
 	</head>
 
@@ -42,39 +44,23 @@
 								<!-- <a href="#" title="Facebook Log On">
 									<img class="ico" ng-click="fbLogin()" src="https://static.xx.fbcdn.net/rsrc.php/yl/r/H3nktOa7ZMg.ico"/>
 								</a> -->
-								<a ng-click="fbLogin()" class="btn btn-social-icon btn-lg btn-facebook">
+								<!-- <a ng-click="fbLogin()" class="btn btn-social-icon btn-lg btn-facebook">
 									<i class="fa fa-facebook"></i>
+								</a> -->
+								<a ng-click="gLogin()" class="btn btn-social-icon btn-lg btn-google">
+									<i class="fa fa-google"></i>
 								</a>
-							</div>
-						</div>
-					</li>
-
-					<li id="signup-div">
-						<div>
-							<a href="#">Sign Up</a>
-							<div class="signup-cont">
-								<h3 class="">Sign Up!</h3>
-								<hr>
-								<!--<input type="text" id="name" placeholder="Enter Name"/>-->
-								<input type="text" id="em-1" placeholder="Enter Email"/>
-								<input type="text" id="em-2" placeholder="Confirm Email"/>
-								<input type="password" id="pwrd-1" placeholder="Enter Password"/>
-								<input type="password" id="pwrd-2" placeholder="Confirm Password"/>
-								<input type="button" ng-click="signUp()" id="" value="Sign Up!"/>
 							</div>
 						</div>
 					</li>
 				</ul>
 			</div>
 
-			<div id="m-div">
+		<div id="m-div" ng-if="user">
 			<a href="#" title="Menu DropDown"><img id="m-icon" src="https://i.imgur.com/huBw3xR.png"/></a>
 			<div id="m-cont">
-			<h3 class="text-center">User Account</h3>
-			<p style="padding: 5px;" class="text-center">If you logged in with facebook or your own Oberra account, your info will appear below</p>
-			<hr>
-			<img width=50% class="fb-photo middlr" src="{{userPhoto}}"/>
-			<a href="{{userLink}}"><h4 class="text-center">{{userName}}</h4></a>
+			<img width=50% class="fb-photo middlr" src="{{user.picture}}"/>
+			<a href="{{user.link}}"><h4 class="text-center">{{user.name}}</h4></a>
 			</div>
 		</div>
 
@@ -108,10 +94,8 @@
 					<div class="forms">
 						<h2 class="text-center"><b>Select/Submit a Topic</b></h2>
 						<select id="topics" class="middlr">
-							<option>-Select a Topic-</option>
-							<option ng-repeat="topic in blogSite">
-								{{topic.name}}
-							</option>
+							<option value="none">- Select a Topic -</option>
+							<option ng-repeat="topic in blogSite" value="{{ topic.name }}">{{ topic.name }}</option>
 						</select><br>
 						<input type="text" class="middlr" id="new-topic" placeholder="Submit a New Topic!"/><br>
 						<button type="button" class="submit-btn middlr" ng-click="newTopic()">Submit Topic</button>
@@ -130,10 +114,8 @@
 
 					<div class="addpost-form brd-1" id="addpost-form" ng-hide="hideForm">
 						<h2 class="text-center"><b>Share a Post</b></h2><hr>
-						<input style="width: 75%; border-color: black;" class="middlr" type="text" id="newpost-name" placeholder="Your Name"/><br>
-						<!--<input class="middlr" type="text" id="newpost-body" placeholder="Your Thoughts"/><br>-->
-						<textarea class="middlr" id="newpost-body" placeholder="Your Thoughts"></textarea><br>
-						<button type="button" class="submit-btn middlr" id="post-btn" ng-click="newPost(this)">Submit Post</button>
+						<textarea class="middlr" id="newpost-body" placeholder="Your Thoughts" ng-model="new_post_body"></textarea><br>
+						<button type="button" class="submit-btn middlr" id="post-btn" ng-click="newPost()">Submit Post</button>
 						<br>
 					</div>
 
