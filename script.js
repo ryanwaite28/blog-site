@@ -212,10 +212,7 @@ App.controller("masterCtrl", ["$scope", "bloggSite",
         name: newTopic
       });
 			$scope.blogSite.sortBy("name", "asc");
-			$scope.$apply();
-
       var newTopic = $('#new-topic').val('');
-
     }
 
   }
